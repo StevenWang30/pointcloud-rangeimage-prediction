@@ -30,6 +30,15 @@ train_sources = os.path.join(DATA_DIR, 'sources_train.hkl')
 val_file = os.path.join(DATA_DIR, 'X_val.hkl')
 val_sources = os.path.join(DATA_DIR, 'sources_val.hkl')
 
+# # read hkl file test
+# import hickle as hkl
+# tr_f = hkl.load(train_file)  # X will be like (n_images, nb_cols, nb_rows, nb_channels)
+# tr_s = hkl.load(train_sources)
+# va_f = hkl.load(val_file)
+# va_s = hkl.load(val_sources)
+# import IPython
+# IPython.embed()
+
 # Training parameters
 nb_epoch = 150
 batch_size = 4
