@@ -3,17 +3,20 @@ import numpy as np
 from keras import backend as K
 from keras.preprocessing.image import Iterator
 import IPython
+import data_process
 
 # Data generator that creates sequences for input into PredNet.
 class SequenceGenerator(Iterator):
-    def __init__(self, data_file, source_file, nt,
+    def __init__(self, data, source, nt,
                  batch_size=8, shuffle=False, seed=None,
                  output_mode='error', sequence_start_mode='all', N_seq=None,
                  data_format=K.image_data_format()):
-        self.X = hkl.load(data_file)  # X will be like (n_images, nb_cols, nb_rows, nb_channels)
+        self.X = data  # X will be like (n_images, nb_cols, nb_rows, nb_channels)
         #
         # IPython.embed()
-        self.sources = hkl.load(source_file) # source for each image so when creating sequences can assure that consecutive frames are from same video
+        self.sources = source # source for each image so when creating sequences can assure that consecutive frames are from same video
+
+        # IPython.embed()
         self.nt = nt
         self.batch_size = batch_size
         self.data_format = data_format
