@@ -57,7 +57,8 @@ def main(args):
     # Model parameters
     n_channels, im_height, im_width = (args.channel, args.height, args.width)
     input_shape = (n_channels, im_height, im_width) if backend.image_data_format() == 'channels_first' else (im_height, im_width, n_channels)
-    stack_sizes = (n_channels, 48, 96, 192)
+    # stack_sizes = (n_channels, 48, 96, 192)
+    stack_sizes = (n_channels, 24, 48, 96)
     R_stack_sizes = stack_sizes
     A_filt_sizes = (3, 3, 3)
     Ahat_filt_sizes = (3, 3, 3, 3)

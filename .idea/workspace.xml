@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e954e9e4-e174-49c8-a8f7-0f2dc916505f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/prednet/data_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_model.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_weights.hdf5" beforeDir="false" afterPath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_weights.hdf5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prednet/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/prednet/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prednet/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="71" column="33" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="33" />
+            <state relative-caret-position="605">
+              <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -221,12 +219,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554291123407</updated>
-      <workItem from="1554291124534" duration="47519000" />
+      <workItem from="1554291124534" duration="49848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47519000" />
+    <option name="totallyTimeSpent" value="49848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -416,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prednet/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="71" column="33" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="33" />
+        <state relative-caret-position="605">
+          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
