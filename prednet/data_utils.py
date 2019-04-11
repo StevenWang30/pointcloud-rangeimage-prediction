@@ -61,10 +61,10 @@ class SequenceGenerator(Iterator):
             if i == 0:
                 continue
             idx = self.possible_starts[idx]
-            print(i)
-            print(idx)
-            print(idx+self.nt)
-            print(self.X.shape)
+            # print(i)
+            # print(idx)
+            # print(idx+self.nt)
+            # print(self.X.shape)
             # IPython.embed()
             batch_x[i] = self.preprocess(self.X[idx:idx+self.nt])
         if self.output_mode == 'error':  # model outputs errors, so y should be zeros

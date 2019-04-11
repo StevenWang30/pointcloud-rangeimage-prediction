@@ -19,6 +19,8 @@ from data_utils import SequenceGenerator as SequenceGenerator_data
 import hickle as hkl
 import data_process
 
+from keras.callbacks import TensorBoard
+
 import IPython
 
 
@@ -87,14 +89,16 @@ def main(args):
     train_generator = SequenceGenerator_data(train_data, train_sources_data, nt, batch_size=args.batch_size, shuffle=True)
     val_generator = SequenceGenerator_data(val_data, val_sources_data, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
 
-    lr_schedule = lambda epoch: 0.001 if epoch < 75 else 0.0001    # start with lr of 0.001 and then drop to 0.0001 after 75 epochs
+    lr_schedule = lambda epoch: 0.0001 if epoch < 75 else 0.00001    # start with lr of 0.001 and then drop to 0.0001 after 75 epochs
     callbacks = [LearningRateScheduler(lr_schedule)]
     if save_model:
         if not os.path.exists(args.weight_dir): os.mkdir(args.weight_dir)
         callbacks.append(ModelCheckpoint(filepath=weights_file, monitor='val_loss', save_best_only=True))
 
-    history = model.fit_generator(train_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch, callbacks=callbacks,
-                    validation_data=val_generator, validation_steps=args.N_seq_val / args.batch_size)
+    callbacks.append(TensorBoard(log_dir=args.log_dir))
+
+    history = model.fit_generator(train_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch,
+              callbacks = callbacks, validation_data=val_generator, validation_steps=args.N_seq_val / args.batch_size)
 
     if save_model:
         json_string = model.to_json()
@@ -126,13 +130,16 @@ if __name__ == '__main__':
 
     # Model related arguments
     parser.add_argument('--nb_epoch', default=150,
-                        help='nb_epoch')
+                        help='nb_epoch') # default 150
     parser.add_argument('--batch_size', default=4, type=int,
                         help='input batch size')
     parser.add_argument('--samples_per_epoch', default=500, type=int,
-                        help='samples_per_epoch')
+                        help='samples_per_epoch') # default 500
     parser.add_argument('--N_seq_val', default=100, type=int,
                         help='number of sequences to use for validation')
+    parser.add_argument('--log_dir', default='../../log/1',
+                        help='log file for tensorboard')
+
     # parser.add_argument('--epoch_iters', default=2000, type=int,
     #                     help='iterations of each epoch (irrelevant to batch size)')
     # parser.add_argument('--optim', default='SGD', help='optimizer')
@@ -196,6 +203,11 @@ if __name__ == '__main__':
     args.ckpt = os.path.join(args.ckpt)
     if not os.path.isdir(args.ckpt):
         os.makedirs(args.ckpt)
+        print("Make dir to " + args.ckpt)
+
+    if not os.path.isdir(args.log_dir):
+        os.makedirs(args.log_dir)
+        print("Make dir to " + args.log_dir)
 
     np.random.seed(args.seed)
 
