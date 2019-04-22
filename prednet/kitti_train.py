@@ -16,15 +16,18 @@ from keras.callbacks import LearningRateScheduler, ModelCheckpoint
 from keras.optimizers import Adam
 
 from prednet import PredNet
-from data_utils import SequenceGenerator
+from data_utils_save import SequenceGenerator
 from kitti_settings import *
 
+from keras.callbacks import TensorBoard
 
 save_model = True  # if weights will be saved
+WEIGHTS_DIR='./model_data_keras2/'
 weights_file = os.path.join(WEIGHTS_DIR, 'prednet_kitti_weights.hdf5')  # where weights will be saved
 json_file = os.path.join(WEIGHTS_DIR, 'prednet_kitti_model.json')
 
 # Data files
+DATA_DIR='../../kitti_data/'
 train_file = os.path.join(DATA_DIR, 'X_train.hkl')
 train_sources = os.path.join(DATA_DIR, 'sources_train.hkl')
 val_file = os.path.join(DATA_DIR, 'X_val.hkl')

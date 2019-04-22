@@ -7,11 +7,12 @@ import data_process
 
 # Data generator that creates sequences for input into PredNet.
 class SequenceGenerator(Iterator):
-    def __init__(self, data, source, nt,
+    def __init__(self, args, data, source, nt,
                  batch_size=8, shuffle=False, seed=None,
                  output_mode='error', sequence_start_mode='all', N_seq=None,
                  data_format=K.image_data_format()):
         self.X = data  # X will be like (n_images, nb_cols, nb_rows, nb_channels)
+        self.args = args
         #
         # IPython.embed()
         self.sources = source # source for each image so when creating sequences can assure that consecutive frames are from same video
@@ -66,6 +67,7 @@ class SequenceGenerator(Iterator):
             # print(idx+self.nt)
             # print(self.X.shape)
             # IPython.embed()
+
             batch_x[i] = self.preprocess(self.X[idx:idx+self.nt])
         if self.output_mode == 'error':  # model outputs errors, so y should be zeros
             batch_y = np.zeros(current_batch_size, np.float32)
@@ -75,6 +77,9 @@ class SequenceGenerator(Iterator):
 
     def preprocess(self, X):
         return X.astype(np.float32) / 255
+
+    def preprocess_rangeimage_data(self, X):
+        return X.astype(np.float32) / self.args.norm_value
 
     def create_all(self):
         X_all = np.zeros((self.N_sequences, self.nt) + self.im_shape, np.float32)

@@ -19,7 +19,7 @@ import argparse
 
 
 def main(args):
-
+    IPython.embed()
     n_plot = 40
     batch_size = 10
     nt = 10
@@ -49,6 +49,7 @@ def main(args):
 
     test_generator = SequenceGenerator(test_file, test_sources, nt, sequence_start_mode='unique', data_format=data_format)
     X_test = test_generator.create_all()
+
     X_hat = test_model.predict(X_test, batch_size)
     if data_format == 'channels_first':
         X_test = np.transpose(X_test, (0, 1, 3, 4, 2))

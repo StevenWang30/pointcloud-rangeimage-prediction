@@ -2,8 +2,6 @@ import hickle as hkl
 import numpy as np
 from keras import backend as K
 from keras.preprocessing.image import Iterator
-import IPython
-import data_process
 
 # Data generator that creates sequences for input into PredNet.
 class SequenceGenerator(Iterator):
@@ -12,12 +10,7 @@ class SequenceGenerator(Iterator):
                  output_mode='error', sequence_start_mode='all', N_seq=None,
                  data_format=K.image_data_format()):
         self.X = hkl.load(data_file)  # X will be like (n_images, nb_cols, nb_rows, nb_channels)
-        #
-        # IPython.embed()
         self.sources = hkl.load(source_file) # source for each image so when creating sequences can assure that consecutive frames are from same video
-        # data_path = "/tensorflow/code/rangeImage_data/2011_09_26_range_image_data/0000000000.txt"
-        # self.X_new, self.sources = data_process.load(data_path)
-        # IPython.embed()
         self.nt = nt
         self.batch_size = batch_size
         self.data_format = data_format
@@ -59,14 +52,7 @@ class SequenceGenerator(Iterator):
             index_array, current_batch_size = next(self.index_generator), self.batch_size
         batch_x = np.zeros((current_batch_size, self.nt) + self.im_shape, np.float32)
         for i, idx in enumerate(index_array):
-            if i == 0:
-                continue
             idx = self.possible_starts[idx]
-            print(i)
-            print(idx)
-            print(idx+self.nt)
-            print(self.X.shape)
-            # IPython.embed()
             batch_x[i] = self.preprocess(self.X[idx:idx+self.nt])
         if self.output_mode == 'error':  # model outputs errors, so y should be zeros
             batch_y = np.zeros(current_batch_size, np.float32)

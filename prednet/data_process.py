@@ -37,7 +37,7 @@ def load(args, data_path, save_bin):
     np.savez(save_bin_path, data, sources)
     print("save bin file into " + save_bin_path)
     print("finish the data process.")
-        # arr = np.loadtxt(data_path, dtype=float)
+    # arr = np.loadtxt(data_path, dtype=float)
 
     # IPython.embed()
     # print(arr)
