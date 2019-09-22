@@ -44,7 +44,7 @@ def transform_point_cloud_to_range_image_txt_file(KITTI_raw_data_path, save_fold
 
 def save_range_image_txt_and_source_to_npy(seq_names, save_path):
 
-    data = []
+    data = np.zeros((0, range_x_, range_y_, 1))
     source = []
 
     for i in range(len(seq_names)):
@@ -56,8 +56,9 @@ def save_range_image_txt_and_source_to_npy(seq_names, save_path):
             print('compose file:', os.path.join(root, f))
             range_image_data = np.loadtxt(os.path.join(root, f))
             range_image_data = np.expand_dims(range_image_data, -1)
-            data.append(range_image_data)
+            data = np.append(data, [range_image_data], axis=0)
             source.append(seq_names[i])
+    # IPython.embed()
     save_dict = {}
     save_dict['range_image'] = data
     save_dict['source'] = source

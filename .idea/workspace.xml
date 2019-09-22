@@ -3,290 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="e954e9e4-e174-49c8-a8f7-0f2dc916505f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch0/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch1/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch10/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch11/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch12/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch13/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch14/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch15/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch16/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch17/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch18/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch19/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch2/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch3/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch4/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch5/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch6/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch7/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch8/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/good_for_kitti/epoch9/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch0/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch1/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch10/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch11/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch12/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch13/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch14/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch15/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch16/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch17/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch18/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch19/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch2/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch20/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch3/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch4/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch5/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch6/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch7/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch8/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mid_result_vis/epoch9/prediction_scores.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/prednet.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/License.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/ckpt/cp.ckpt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/ckpt/cp_back.ckpt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/data_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/data_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/data_utils_save.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/demo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/download_data.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/download_models.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/environment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/keras_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/kitti_dataset_process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/kitti_evaluate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/kitti_extrap_finetune.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/kitti_settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/kitti_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_model-extrapfinetuned.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_model.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/prednet_kitti_weights.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/tensorflow_weights/prednet_kitti_weights-Lall.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/tensorflow_weights/prednet_kitti_weights-extrapfinetuned.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/tensorflow_weights/prednet_kitti_weights.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/theano_weights/prednet_kitti_weights-Lall.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/theano_weights/prednet_kitti_weights-extrapfinetuned.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/model_data_keras2/theano_weights/prednet_kitti_weights.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/my_callback.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/my_training.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/prednet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/process_kitti.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prednet/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_utils_save.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_data.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/download_models.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitti_dataset_process.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitti_settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitti_train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_callback.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_callback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_kitti.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/dataset_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/dataset_preprocessing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -299,7 +29,85 @@
     <SUITE FILE_PATH="coverage/rangeImage_prediction$py36.coverage" NAME="py36 Coverage Results" MODIFIED="1554979555107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/prednet" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="915">
+              <caret line="154" column="37" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/dataset_preprocessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_process.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prednet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_training.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="182" column="77" selection-start-line="182" selection-start-column="62" selection-end-line="182" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_callback.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -343,14 +151,19 @@
         <option value="$PROJECT_DIR$/prednet/train.py" />
         <option value="$PROJECT_DIR$/prednet/kitti_train.py" />
         <option value="$PROJECT_DIR$/prednet/data_utils_save.py" />
+        <option value="$PROJECT_DIR$/utils/dataset_preprocessing.py" />
+        <option value="$PROJECT_DIR$/my_training.py" />
+        <option value="$PROJECT_DIR$/data_utils.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/my_callback.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1984" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+    <option name="x" value="1985" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -363,6 +176,11 @@
             <path>
               <item name="rangeImage_prediction" type="b2602c69:ProjectViewProjectNode" />
               <item name="rangeImage_prediction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rangeImage_prediction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rangeImage_prediction" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -504,15 +322,16 @@
       <workItem from="1555224562597" duration="7344000" />
       <workItem from="1557202891353" duration="975000" />
       <workItem from="1569052513037" duration="17000" />
-      <workItem from="1569129800576" duration="287000" />
+      <workItem from="1569129800576" duration="10977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89506000" />
+    <option name="totallyTimeSpent" value="100196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14040907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -648,13 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/remote_sources/-1677667310/1480623369/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2729">
-          <caret line="601" column="6" selection-start-line="601" selection-start-column="6" selection-end-line="601" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prednet/train.py" />
     <entry file="file://$PROJECT_DIR$/prednet/kitti_train.py" />
     <entry file="file://$PROJECT_DIR$/prednet/prednet.py" />
@@ -664,5 +476,82 @@
     <entry file="file://$PROJECT_DIR$/prednet/process_kitti.py" />
     <entry file="file://$PROJECT_DIR$/prednet/data_utils.py" />
     <entry file="file://$PROJECT_DIR$/prednet/data_process.py" />
+    <entry file="file://$PROJECT_DIR$/prednet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1677667310/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="1162" column="8" selection-start-line="1162" selection-start-column="8" selection-end-line="1162" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/dataset_preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/remote_sources/-1677667310/1480623369/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="601" column="6" selection-start-line="601" selection-start-column="6" selection-end-line="601" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="182" column="77" selection-start-line="182" selection-start-column="62" selection-end-line="182" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="154" column="37" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_callback.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
