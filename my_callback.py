@@ -40,8 +40,10 @@ class My_Callback(keras.callbacks.Callback):
         predictions = test_prednet(inputs)
         test_model = Model(inputs=inputs, outputs=predictions)
         X_test = validation_data.create_all()
+        X_test_origin = X_test.copy()
         X_test = X_test[0:nt]
-        X_test = X_test / args.norm_value
+        # X_test = X_test / args.norm_value
+        # IPython.embed()
 
         # im = X_test[0][0] * args.norm_value
         # RESULTS_SAVE_DIR = "../mid_result_vis/epoch" + str(epoch)
@@ -56,8 +58,8 @@ class My_Callback(keras.callbacks.Callback):
         X_hat_not_scaled = X_hat * args.norm_value
 
         # Compare MSE of PredNet predictions vs. using last frame.  Write results to prediction_scores.txt
-        mse_model = np.mean((X_not_scaled[:, 1:] - X_hat_not_scaled[:, 1:]) ** 2)  # look at all timesteps except the first
-        mse_prev = np.mean((X_not_scaled[:, :-1] - X_not_scaled[:, 1:]) ** 2)
+        mse_model = np.mean((X_not_scaled[:, -1] - X_hat_not_scaled[:, -1]) ** 2)  # look at all timesteps except the first
+        mse_prev = np.mean((X_not_scaled[:, -1] - X_not_scaled[:, -2]) ** 2)
 
 
         result_save_path = args.mse_result_path
@@ -68,76 +70,73 @@ class My_Callback(keras.callbacks.Callback):
         f.write("Previous Frame MSE: %f\n\n\n" % mse_prev)
         f.close()
 
-        # # Plot some predictions
+        # Plot some predictions
+
+        rand_num = int(np.random.random(1) * X_not_scaled.shape[0])
+        gs = gridspec.GridSpec(2, nt)
+        gs.update(wspace=0., hspace=0.)
+
+        X_not_scaled = X_not_scaled[:, :, :, :, 0]
+        X_hat_not_scaled = X_hat_not_scaled[:, :, :, :, 0]
+
+        misc_value = np.max(X_not_scaled) / 255
+        im_X = (X_not_scaled[rand_num, -1] / misc_value).astype(np.uint8)
+        im_X_hat = (X_hat_not_scaled[rand_num, -1] / misc_value).astype(np.uint8)
+        im_dif_hat = np.abs(im_X_hat - im_X)
+        im_X_previous = (X_not_scaled[rand_num, -2] / misc_value).astype(np.uint8)
+        im_dif_previous = np.abs(im_X_previous - im_X)
+
+
+        im = im_X
+        im = np.concatenate((im, im_X_hat), axis=0).astype(np.uint8)
+        im = np.concatenate((im, im_dif_hat), axis=0).astype(np.uint8)
+        im = np.concatenate((im, im_X_previous), axis=0).astype(np.uint8)
+        im = np.concatenate((im, im_dif_previous), axis=0).astype(np.uint8)
         #
         #
-        # ###
-        # nt = 2
-        # ###
-        # nt = 2
-        # ###
-        # # aspect_ratio = float(X_hat.shape[2]) / X_hat.shape[3]
-        # # plt.figure(figsize=(nt, 2 * aspect_ratio))
-        # gs = gridspec.GridSpec(2, nt)
-        # gs.update(wspace=0., hspace=0.)
+        # for t in range(1, X_not_scaled.shape, 1):
+        #     im_test = X_not_scaled[rand_num, t] / misc_value
+        #     im_hat = X_hat_not_scaled[rand_num, t] / misc_value
+        #     im = np.concatenate((im, im_test), axis=0).astype(np.uint8)
+        #     im = np.concatenate((im, im_hat), axis=0).astype(np.uint8)
         #
-        # X_test = X_test[:, :, :, :, 0]
-        # X_hat = X_hat[:, :, :, :, 0]
-        #
-        # # IPython.embed()
-        # # *255
-        # X_test = X_test * args.norm_value
-        # X_hat = X_hat * args.norm_value
-        #
-        # IPython.embed()
-        #
-        # for i in range(nt):
-        #     #for t in range(nt):
         #     # IPython.embed()
-        #     im_dif = X_hat[i, 9] - X_test[i, 9]
-        #     misc_value = np.max(X_test) / 255
-        #     im_dif = im_dif / misc_value
-        #     im = im_dif
-        #     for t in range(1, 10, 1):
-        #         im_test = X_test[i, t] / misc_value
-        #         im_hat = X_hat[i, t] / misc_value
-        #         im = np.concatenate((im, im_test), axis=0).astype(np.uint8)
-        #         im = np.concatenate((im, im_hat), axis=0).astype(np.uint8)
+        #     # plt.subplot(gs[t])
+        #     # plt.imshow(X_not_scaled[rand_num, t], interpolation='none')
+        #     # plt.tick_params(axis='both', which='both', bottom='off', top='off', left='off', right='off',
+        #     #                 labelbottom='off', labelleft='off')
+        #     # if t == 0: plt.ylabel('Actual', fontsize=10)
+        #     #
+        #     # plt.subplot(gs[t + nt])
+        #     # plt.imshow(X_hat_not_scaled[rand_num, t], interpolation='none')
+        #     # plt.tick_params(axis='both', which='both', bottom='off', top='off', left='off', right='off',
+        #     #                 labelbottom='off', labelleft='off')
+        #     # if t == 0: plt.ylabel('Predicted', fontsize=10)
+        #     # plt.subplot(gs[t])
+        #     # plt.imshow(X_not_scaled[rand_num, t])
+        #     # if t == 0: plt.ylabel('Actual', fontsize=10)
+        #     #
+        #     # plt.subplot(gs[t + nt])
+        #     # plt.imshow(X_hat_not_scaled[rand_num, t])
+        #     # if t == 0: plt.ylabel('Predicted', fontsize=10)
         #
-        #         # IPython.embed()
-        #         # plt.subplot(gs[t])
-        #         # plt.imshow(X_test[i, t], interpolation='none')
-        #         # plt.tick_params(axis='both', which='both', bottom='off', top='off', left='off', right='off',
-        #         #                 labelbottom='off', labelleft='off')
-        #         # if t == 0: plt.ylabel('Actual', fontsize=10)
-        #         #
-        #         # plt.subplot(gs[t + nt])
-        #         # plt.imshow(X_hat[i, t], interpolation='none')
-        #         # plt.tick_params(axis='both', which='both', bottom='off', top='off', left='off', right='off',
-        #         #                 labelbottom='off', labelleft='off')
-        #         # if t == 0: plt.ylabel('Predicted', fontsize=10)
-        #         # plt.subplot(gs[t])
-        #         # plt.imshow(X_test[i, t])
-        #         # if t == 0: plt.ylabel('Actual', fontsize=10)
-        #         #
-        #         # plt.subplot(gs[t + nt])
-        #         # plt.imshow(X_hat[i, t])
-        #         # if t == 0: plt.ylabel('Predicted', fontsize=10)
-        #
-        #     # scipy.misc.imsave(RESULTS_SAVE_DIR + "/" + 'plot_' + str(i) + '.png', im)
-        #     cv2.imwrite(RESULTS_SAVE_DIR + "/" + 'plot_' + str(i) + '.png', im)
-        #
-        #     im_dif = X_hat[i, 9] / misc_value
-        #     im_dif_t = X_test[i, 9] / misc_value
+        # # scipy.misc.imsave(RESULTS_SAVE_DIR + "/" + 'plot_' + str(i) + '.png', im)
+        fig_save_path = os.path.join(args.fig_result_dir, "epoch_"+str(epoch)+".png")
+        cv2.imwrite(fig_save_path, im)
+
+        IPython.embed()
+
+        # im_dif = X_hat_not_scaled[rand_num, 9] / misc_value
+        # im_dif_t = X_not_scaled[rand_num, 9] / misc_value
+        # im_dif = np.concatenate((im_dif, im_dif_t), axis=0).astype(np.uint8)
+        # im_dif_t = np.fabs(X_not_scaled[rand_num, 9] - X_not_scaled[rand_num, 8]) / misc_value
+        # im_dif = np.concatenate((im_dif, im_dif_t), axis=0).astype(np.uint8)
+        # for t in reversed(list(range(1, 10))):
+        #     im_dif_t = np.fabs(X_hat_not_scaled[rand_num, 9] - X_not_scaled[rand_num, t]) / misc_value
         #     im_dif = np.concatenate((im_dif, im_dif_t), axis=0).astype(np.uint8)
-        #     im_dif_t = np.fabs(X_test[i, 9] - X_test[i, 8]) / misc_value
-        #     im_dif = np.concatenate((im_dif, im_dif_t), axis=0).astype(np.uint8)
-        #     for t in reversed(list(range(1, 10))):
-        #         im_dif_t = np.fabs(X_hat[i, 9] - X_test[i, t]) / misc_value
-        #         im_dif = np.concatenate((im_dif, im_dif_t), axis=0).astype(np.uint8)
-        #     cv2.imwrite(RESULTS_SAVE_DIR + "/" + 'plot_dif_' + str(i) + '.png', im_dif)
-        #
-        #     plt.clf()
+        # cv2.imwrite(RESULTS_SAVE_DIR + "/" + 'plot_dif_' + str(rand_num) + '.png', im_dif)
+
+        # plt.clf()
 
     # def on_epoch_begin(self, epoch, validation_data_my):
     #     IPython.embed()

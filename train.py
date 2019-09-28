@@ -7,6 +7,7 @@ from six.moves import cPickle
 from keras import backend
 
 from keras.layers import Input, Dense, Flatten
+from keras import backend as K
 from keras.layers import LSTM
 from keras.layers import TimeDistributed
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint
@@ -63,8 +64,8 @@ def main(args):
     # Model parameters
     n_channels, im_height, im_width = (args.channel, args.height, args.width)
     input_shape = (n_channels, im_height, im_width) if backend.image_data_format() == 'channels_first' else (im_height, im_width, n_channels)
-    # stack_sizes = (n_channels, 48, 96, 192)
-    stack_sizes = (n_channels, 24, 48, 96)
+    stack_sizes = (n_channels, 48, 96, 192)
+    # stack_sizes = (n_channels, 24, 48, 96)
     R_stack_sizes = stack_sizes
     A_filt_sizes = (3, 3, 3)
     Ahat_filt_sizes = (3, 3, 3, 3)
@@ -84,16 +85,26 @@ def main(args):
     inputs = Input(shape=(nt,) + input_shape)
     # IPython.embed()
     errors = prednet(inputs)  # errors will be (batch_size, nt, nb_layers)
+
+
+    # errors = errors * 100
+    # IPython.embed()
+
     errors_by_time = TimeDistributed(Dense(1, trainable=False), weights=[layer_loss_weights, np.zeros(1)], trainable=False)(errors)  # calculate weighted error by layer
     errors_by_time = Flatten()(errors_by_time)  # will be (batch_size, nt)
     final_errors = Dense(1, weights=[time_loss_weights, np.zeros(1)], trainable=False)(errors_by_time)  # weight errors by time
+
+    # final_errors = final_errors * 100
+    # final_errors = K.dot(final_errors, 100)
+    # final_errors = Lambda(lambda x: x * 100)(final_errors)
+
     model = Model(inputs=inputs, outputs=final_errors)
     model.compile(loss='mean_absolute_error', optimizer='adam')
 
-
-    # # load old checkpoint weight
-    # old_checkpoint_path = "../good_ckpt/cp.ckpt"
-    # model.load_weights(old_checkpoint_path)
+    # IF LOAD CKPT fILE
+    # load old checkpoint weight
+    old_checkpoint_path = args.ckpt
+    model.load_weights(old_checkpoint_path)
 
     # train_generator = SequenceGenerator(train_file, train_sources, nt, batch_size=args.batch_size, shuffle=True)
     # val_generator = SequenceGenerator(val_file, val_sources, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
@@ -161,11 +172,11 @@ if __name__ == '__main__':
     # Model related arguments
     parser.add_argument('--nb_epoch', default=200,
                         help='nb_epoch') # default 150
-    parser.add_argument('--batch_size', default=7, type=int,
+    parser.add_argument('--batch_size', default=3, type=int,
                         help='input batch size')
     parser.add_argument('--samples_per_epoch', default=500, type=int,
                         help='samples_per_epoch') # default 500
-    parser.add_argument('--N_seq_val', default=5, type=int,
+    parser.add_argument('--N_seq_val', default=20, type=int,
                         help='number of sequences to use for validation')
     parser.add_argument('--nt', default=5, type=int,
                         help='number of timesteps used for sequences in training')
@@ -220,6 +231,9 @@ if __name__ == '__main__':
     args.mse_result_path = os.path.join(mse_result_dir,
                                         'mse_result-' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).replace(
                                             ' ', '-') + '.txt')
+    fig_result_dir = os.path.join(args.result_dir, 'fig_result')
+    if not os.path.exists(fig_result_dir): os.mkdir(fig_result_dir)
+    args.fig_result_dir = fig_result_dir
 
     np.random.seed(args.seed)
 

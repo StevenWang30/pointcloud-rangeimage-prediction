@@ -66,9 +66,13 @@ class SequenceGenerator(Iterator):
             index_array, current_batch_size = next(self.index_generator), self.batch_size
         batch_x = np.zeros((current_batch_size, self.nt) + self.im_shape, np.float32)
         # IPython.embed()
+        print(index_array[0])
+        # for i in range(index_array[0].shape[0]):
+        #     for j in range(self.nt):
+        #         print(self.sources[index_array[0][i]+j])
         for i, l in enumerate(index_array[0]):
             # print(i)
-            # print(idx)
+
             # print(idx+self.nt)
             # print(self.data.shape)
             # IPython.embed()
@@ -78,6 +82,8 @@ class SequenceGenerator(Iterator):
             batch_y = np.zeros(current_batch_size, np.float32)
         elif self.output_mode == 'prediction':  # output actual pixels
             batch_y = batch_x
+
+        # IPython.embed()
         return batch_x, batch_y
 
     def preprocess(self, X):
