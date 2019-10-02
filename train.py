@@ -136,7 +136,7 @@ def main(args):
     cp_callback = ModelCheckpoint(checkpoint_path, save_weights_only=True, verbose=1)
     callbacks.append(cp_callback)
 
-    history = model.fit_generator(train_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch, args=args,
+    history = model.fit_generator(val_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch, args=args,
               callbacks = callbacks, validation_data=val_generator, validation_steps=args.N_seq_val / args.batch_size)
 
     # if compare_with_copy:
@@ -161,10 +161,16 @@ if __name__ == '__main__':
                         default='/data/KITTI_rangeimage_predict')
     parser.add_argument('--training_data',
                         default='/data/KITTI_rangeimage_predict/training_data.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/KITTI_rangeimage_predict/
+    # parser.add_argument('--result_dir',
+    #                     default='/data/KITTI_rangeimage_predict/results')
     parser.add_argument('--validation_data',
-                        default='/data/KITTI_rangeimage_predict/validation_data.npy')
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/City/City.npy')
+
     parser.add_argument('--result_dir',
-                        default='/data/KITTI_rangeimage_predict/results')
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/City/results')
+
     parser.add_argument('--weight_dir',
                         default='./model_data_keras2/')
 
@@ -226,6 +232,7 @@ if __name__ == '__main__':
                 print(str(filepath) + " removed!")
         print("remove all old log files")
 
+    if not os.path.exists(args.result_dir): os.mkdir(args.result_dir)
     mse_result_dir = os.path.join(args.result_dir, 'mse_result')
     if not os.path.exists(mse_result_dir): os.mkdir(mse_result_dir)
     args.mse_result_path = os.path.join(mse_result_dir,

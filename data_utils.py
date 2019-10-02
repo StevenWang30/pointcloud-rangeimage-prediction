@@ -91,13 +91,22 @@ class SequenceGenerator(Iterator):
         # return X.astype(np.float32) / self.args.norm_value
         ret = X.astype(np.float32) / self.norm_scaler
         ret[ np.where(ret > 1) ] = 1
+        # ret = np.power(ret, 0.1)
         return ret
 
-    def preprocess_rangeimage_data(self, X):
-        return X.astype(np.float32) / self.args.norm_value
+    # def preprocess_rangeimage_data(self, X):
+    #     return X.astype(np.float32) / self.args.norm_value
 
     def create_all(self):
         X_all = np.zeros((self.N_sequences, self.nt) + self.im_shape, np.float32)
         for i, idx in enumerate(self.possible_starts):
             X_all[i] = self.preprocess(self.data[idx:idx+self.nt])
+
+        # X_all = np.power(X_all, 0.1)
+        return X_all
+
+    def create_all_origin(self):
+        X_all = np.zeros((self.N_sequences, self.nt) + self.im_shape, np.float32)
+        for i, idx in enumerate(self.possible_starts):
+            X_all[i] = self.data[idx:idx + self.nt]
         return X_all
