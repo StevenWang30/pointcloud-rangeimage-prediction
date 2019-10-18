@@ -64,8 +64,8 @@ def main(args):
     # Model parameters
     n_channels, im_height, im_width = (args.channel, args.height, args.width)
     input_shape = (n_channels, im_height, im_width) if backend.image_data_format() == 'channels_first' else (im_height, im_width, n_channels)
-    stack_sizes = (n_channels, 48, 96, 192)
-    # stack_sizes = (n_channels, 24, 48, 96)
+    # stack_sizes = (n_channels, 48, 96, 192)
+    stack_sizes = (n_channels, 24, 48, 96)
     R_stack_sizes = stack_sizes
     A_filt_sizes = (3, 3, 3)
     Ahat_filt_sizes = (3, 3, 3, 3)
@@ -104,11 +104,13 @@ def main(args):
     # IF LOAD CKPT fILE
     # load old checkpoint weight
     old_checkpoint_path = args.ckpt
+    # old_checkpoint_path = '/code/rangeImage_prediction/good_results/model_data_keras2/good_frame5.ckpt'
+    old_checkpoint_path = '/code/rangeImage_prediction/good_results/cp_nt10.ckpt'
     model.load_weights(old_checkpoint_path)
 
     # train_generator = SequenceGenerator(train_file, train_sources, nt, batch_size=args.batch_size, shuffle=True)
     # val_generator = SequenceGenerator(val_file, val_sources, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
-    train_generator = SequenceGenerator_data(args, args.training_data, nt, batch_size=args.batch_size, shuffle=True)
+    # train_generator = SequenceGenerator_data(args, args.training_data, nt, batch_size=args.batch_size, shuffle=True)
     val_generator = SequenceGenerator_data(args, args.validation_data, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
     # a = val_generator.create_all()[0][0]
     # a=val_data[0]
@@ -159,32 +161,37 @@ if __name__ == '__main__':
     # Path related arguments
     parser.add_argument('--data_dir',
                         default='/data/KITTI_rangeimage_predict')
-    parser.add_argument('--training_data',
-                        default='/data/KITTI_rangeimage_predict/training_data.npy')
+    # parser.add_argument('--training_data',
+    #                     default='/data/KITTI_rangeimage_predict/training_data.npy')
     # parser.add_argument('--validation_data',
-    #                     default='/data/KITTI_rangeimage_predict/
+    #                     default='/data/KITTI_rangeimage_predict/validation_data.npy')
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/results')
-    parser.add_argument('--validation_data',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/City/City.npy')
 
+    # parser.add_argument('--validation_data',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/results')
+
+    parser.add_argument('--validation_data',
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus.npy')
     parser.add_argument('--result_dir',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/City/results')
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus')
 
     parser.add_argument('--weight_dir',
                         default='./model_data_keras2/')
 
 
     # Model related arguments
-    parser.add_argument('--nb_epoch', default=200,
+    parser.add_argument('--nb_epoch', default=20,
                         help='nb_epoch') # default 150
     parser.add_argument('--batch_size', default=3, type=int,
                         help='input batch size')
-    parser.add_argument('--samples_per_epoch', default=500, type=int,
+    parser.add_argument('--samples_per_epoch', default=10, type=int,
                         help='samples_per_epoch') # default 500
     parser.add_argument('--N_seq_val', default=20, type=int,
                         help='number of sequences to use for validation')
-    parser.add_argument('--nt', default=5, type=int,
+    parser.add_argument('--nt', default=10, type=int,
                         help='number of timesteps used for sequences in training')
     parser.add_argument('--norm_value', default=80, type=float,
                         help='value for normalizing the input data into 0-1')

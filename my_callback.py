@@ -44,7 +44,7 @@ class My_Callback(keras.callbacks.Callback):
         test_model = Model(inputs=inputs, outputs=predictions)
         X_test = validation_data.create_all()
         X_test_origin = validation_data.create_all_origin()
-        X_test = X_test[0:10]
+        # X_test = X_test[0:10]
         # X_test = X_test / args.norm_value
         # IPython.embed()
 
@@ -151,29 +151,29 @@ class My_Callback(keras.callbacks.Callback):
 
         for i in range(nt):
             # IPython.embed()
-            np.savetxt(os.path.join(args.fig_result_dir, "X_hat_" + str(i) + ".txt"), X_hat_not_scaled[rand_num, i], fmt='%f')
-            np.savetxt(os.path.join(args.fig_result_dir, "X_gt_" + str(i) + ".txt"), X_not_scaled[rand_num, i], fmt='%f')
+            np.savetxt(os.path.join(args.fig_result_dir, "X_hat_frame" + str(rand_num) + "_time" + str(i) + ".txt"), X_hat_not_scaled[rand_num, i], fmt='%f')
+            np.savetxt(os.path.join(args.fig_result_dir, "X_gt_frame" + str(rand_num) + "_time" + str(i) + ".txt"), X_not_scaled[rand_num, i], fmt='%f')
             misc_value = np.max(X_not_scaled) / 255
             im_X = (X_not_scaled[rand_num, i] / misc_value).astype(np.uint8)
-            fig_save_path = os.path.join(args.fig_result_dir, "X_gt_" + str(i) + ".png")
+            fig_save_path = os.path.join(args.fig_result_dir, "X_gt_frame" + str(rand_num) + "_time" + str(i) + ".png")
             cv2.imwrite(fig_save_path, im_X)
             im_X_hat = (X_hat_not_scaled[rand_num, i] / misc_value).astype(np.uint8)
-            fig_save_path = os.path.join(args.fig_result_dir, "X_hat_" + str(i) + ".png")
+            fig_save_path = os.path.join(args.fig_result_dir, "X_hat_frame" + str(rand_num) + "_time" + str(i) + ".png")
             cv2.imwrite(fig_save_path, im_X_hat)
 
-        for i in range(3):
-            # save groundtruth image
-            # imsave(fig_save_path.replace('.png', '_groundtruth.tif'), X_not_scaled[i, -1])
-            fig_save_path = os.path.join(args.fig_result_dir, "my_rangeimage.png")
-            np.savetxt(fig_save_path.replace('.png', '_' + str(i) + '_groundtruth.txt'), X_not_scaled[i, -1], fmt='%f')
-            # save predict image
-            # imsave(fig_save_path.replace('.png', '_predict.tif'), X_hat_not_scaled[i, -1])
-            np.savetxt(fig_save_path.replace('.png', '_' + str(i) + '_predict.txt'), X_hat_not_scaled[i, -1], fmt='%f')
-            # save origin image
-            # imsave(fig_save_path.replace('.png', '_previous.tif'), X_not_scaled[i, -2])
-            np.savetxt(fig_save_path.replace('.png', '_' + str(i) + '_previous.txt'), X_not_scaled[i, -2], fmt='%f')
+        # for i in range(3):
+        #     # save groundtruth image
+        #     # imsave(fig_save_path.replace('.png', '_groundtruth.tif'), X_not_scaled[i, -1])
+        #     fig_save_path = os.path.join(args.fig_result_dir, "my_rangeimage.png")
+        #     np.savetxt(fig_save_path.replace('.png', '_frame' + str(i) + '_groundtruth.txt'), X_not_scaled[i, -1], fmt='%f')
+        #     # save predict image
+        #     # imsave(fig_save_path.replace('.png', '_predict.tif'), X_hat_not_scaled[i, -1])
+        #     np.savetxt(fig_save_path.replace('.png', '_frame' + str(i) + '_predict.txt'), X_hat_not_scaled[i, -1], fmt='%f')
+        #     # save origin image
+        #     # imsave(fig_save_path.replace('.png', '_previous.tif'), X_not_scaled[i, -2])
+        #     np.savetxt(fig_save_path.replace('.png', '_frame' + str(i) + '_previous.txt'), X_not_scaled[i, -2], fmt='%f')
 
-        IPython.embed()
+        # IPython.embed()
 
         # im_dif = X_hat_not_scaled[rand_num, 9] / misc_value
         # im_dif_t = X_not_scaled[rand_num, 9] / misc_value

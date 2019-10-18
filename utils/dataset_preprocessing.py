@@ -74,11 +74,15 @@ def save_range_image_txt_and_source_to_npy(seq_names, save_path):
 
     for i in range(len(seq_names)):
         root = os.path.join(seq_names[i], 'range_image_data')
+        root = seq_names[i]
         print('Sequence: ', seq_names[i])
         rangeimage_txts = os.listdir(root)
         rangeimage_txts.sort(key=lambda x: int(x.split('.')[0]))
         for f in rangeimage_txts:
+            if f.split('.')[-1] != 'txt':
+                continue
             print('compose file:', os.path.join(root, f))
+            # IPython.embed()
             range_image_data = np.loadtxt(os.path.join(root, f))
             range_image_data = np.expand_dims(range_image_data, -1)
             data = np.append(data, [range_image_data], axis=0)
@@ -115,10 +119,23 @@ if __name__ == '__main__':
     # save_path = os.path.join(save_folder, 'validation_data.npy')
     # save_range_image_txt_and_source_to_npy(val_seq_names, save_path)
 
-    training_seq_names = ['/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Campus/2011_09_28_drive_0016_extract']
+    # training_seq_names = [
+    #     '/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Campus/2011_09_28_drive_0016_extract']
+    # save_folder = 'range_image_data'
+    # transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
+    # save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Campus/Campus.npy'
+    # save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
+
+    # training_seq_names = ['/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/road']
+    # save_folder = 'range_image_data'
+    # # transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
+    # save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/road_draw.npy'
+    # save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
+
+    training_seq_names = ['/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road']
     save_folder = 'range_image_data'
-    transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
-    save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Campus/Campus.npy'
+    # transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
+    save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road.npy'
     save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
 
 
