@@ -47,7 +47,7 @@ When training on a new dataset, the image size has to be divisible by 2^(nb of l
 
 ### Test Results
 
-[campus dataset]
+#### campus
 <img src="./result_images/campus.png" width="900"/>
 
 ```bash
@@ -56,9 +56,9 @@ Previous Frame MSE: 41.555820
 
 Model SSIM: 0.847482
 Previous Frame SSIM: 0.783482
-	```
+```
 
-[road dataset]
+#### road
 <img src="./road/city.png" width="900"/>
 
 ```bash
@@ -67,10 +67,10 @@ Previous Frame MSE: 20.286551
 
 Model SSIM: 0.826418
 Previous Frame SSIM: 0.811863
-	```
+```
 
 
-[city dataset]
+#### city
 <img src="./result_images/city.png" width="900"/>
 
 ```bash
@@ -79,10 +79,10 @@ Previous Frame MSE: 42.781769
 
 Model SSIM: 0.514228
 Previous Frame SSIM: 0.484143
-	```
+```
 
 
-[residential dataset]
+#### residential
 <img src="./result_images/residential.png" width="900"/>
 
 ```bash
@@ -91,10 +91,9 @@ Previous Frame MSE: 12.637510
 
 Model SSIM: 0.817005
 Previous Frame SSIM: 0.809253
-
-	```
+```
 
 
 <br>
 
-<sup>1</sup> Note on implementation:  PredNet inherits from the Recurrent layer class, i.e. it has an internal state and a step function. Given the top-down then bottom-up update sequence, it must currently be implemented in Keras as essentially a 'super' layer where all layers in the PredNet are in one PredNet 'layer'. This is less than ideal, but it seems like the most efficient way as of now. We welcome suggestions if anyone thinks of a better implementation.  
+<sup>1</sup> Note on implementation:  PredNet inherits from the Recurrent layer class, i.e. it has an internal state and a step function. Given the top-down then bottom-up update sequence, it must currently be implemented in Keras as essentially a 'super' layer where all layers in the PredNet are in one PredNet 'layer'. This is less than ideal, but it seems like the most efficient way as of now. We welcome suggestions if anyone thinks of a better implementation.
