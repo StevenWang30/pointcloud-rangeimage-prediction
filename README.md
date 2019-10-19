@@ -33,7 +33,7 @@ You need to change the directory in the code to fit your own dataset.
 	python train.py
 	```
 	Use --training_data --validation_data to load data, and use --result_dir to specify the validation visualization result directory path.
-	--nt changes the time stamps in a prediction iteration. It means use nt - 1 images to predict the nt image. --rangeimage_size sets the range image size, which set default 64, 2000, 1 here.
+	--nt changes the time stamps in a prediction iteration. It means use nt images to predict the next image. --rangeimage_size sets the range image size, which set default 64, 2000, 1 here.
 	See [Keras FAQ](http://keras.io/getting-started/faq/#how-can-i-run-keras-on-gpu) on how to run using a GPU.
 	
 	<br>
@@ -46,6 +46,11 @@ You need to change the directory in the code to fit your own dataset.
 When training on a new dataset, the image size has to be divisible by 2^(nb of layers - 1) because of the cyclical 2x2 max-pooling and upsampling operations.
 
 ### Test Results
+The top row of the images is the real image in time frame #10 (groundtruth).
+Second row is the predicted image using real images in time frame #0-9
+Third row is the differences between predicted image with groundtruth image.
+Fourth row is the real image in time frame #9.
+Last row is the differences between real image in time frame #9 with time frame #10.
 
 #### campus
 <img src="./result_images/campus.png" width="900"/>
@@ -59,7 +64,7 @@ Previous Frame SSIM: 0.783482
 ```
 
 #### road
-<img src="./road/city.png" width="900"/>
+<img src="./result_images/road.png" width="900"/>
 
 ```bash
 Model MSE: 10.711375
