@@ -1,9 +1,8 @@
-# prednet
+# Range Image Prediction
 
-Code and models accompanying [Deep Predictive Coding Networks for Video Prediction and Unsupervised Learning](https://arxiv.org/abs/1605.08104) by Bill Lotter, Gabriel Kreiman, and David Cox.
-
-The PredNet is a deep recurrent convolutional neural network that is inspired by the neuroscience concept of predictive coding (Rao and Ballard, 1999; Friston, 2005).
-**Check out example prediction videos [here](https://coxlab.github.io/prednet/).**
+This framework works for range image sequence prediction, which can also be used for 3D point cloud prediction. 
+We project the 3D point cloud into range image in shape 64 x 2000, and use 2D conv LSTM and prednet to predict the image sequences.
+Code and models are changed from Prednet by Bill etc.
 
 The architecture is implemented as a custom layer<sup>1</sup> in [Keras](http://keras.io/).
 Code and model data is compatible with Keras 2.0 and Python 2.7 and 3.6.
@@ -14,45 +13,77 @@ To convert old PredNet model files and weights for Keras 2.0 compatibility, see 
 
 ## KITTI Demo
 
-Code is included for training the PredNet on the raw [KITTI](http://www.cvlibs.net/datasets/kitti/) dataset.
-We include code for downloading and processing the data, as well as training and evaluating the model.
-The preprocessed data and can also be downloaded directly using `download_data.sh` and the **trained weights** by running `download_models.sh`.
-The model download will include the original weights trained for t+1 prediction, the fine-tuned weights trained to extrapolate predictions for multiple timesteps,  and the "L<sub>all</sub>" weights trained with an 0.1 loss weight on upper layers (see paper for details).
+Code is included for training the network on the raw KITTI unsynced and unrectified data.
 
 ### Steps
 1. **Download/process data**
+Download the [KITTI raw](http://www.cvlibs.net/datasets/kitti/raw_data.php) data and use the /utils/dataset_preprocessing.py to process data.
+
+The dataset_preprocessing.py contains three functions, which can change point cloud pcd file into range image txt file, point cloud txt file into range image txt file, and change the range image txt file into dataset.npy file. The dataset.npy is for the training, validation, and testing.
+Use np.load(npy_file, allow_pickle=True).item() to load data, which contains range image data in ['range_image'] and source name in ['source']. 
+You need to change the directory in the code to fit your own dataset.
 	```bash
-	python process_kitti.py
+	python /utils/dataset_preprocessing.py
 	```
-	This will scrape the KITTI website to download the raw data from the city, residential, and road categories (~165 GB) and then process the images (cropping, downsampling).
-	Alternatively, the processed data (~3 GB) can be directly downloaded by executing `download_data.sh`
 	<br>
 	<br>
 
 2. **Train model**
 	```bash
-	python kitti_train.py
+	python train.py
 	```
-	This will train a PredNet model for t+1 prediction.
+	Use --training_data --validation_data to load data, and use --result_dir to specify the validation visualization result directory path.
+	--nt changes the time stamps in a prediction iteration. It means use nt - 1 images to predict the nt image. --rangeimage_size sets the range image size, which set default 64, 2000, 1 here.
 	See [Keras FAQ](http://keras.io/getting-started/faq/#how-can-i-run-keras-on-gpu) on how to run using a GPU.
 	**To download pre-trained weights**, run `download_models.sh`
 	<br>
 	<br>
 
 3. **Evaluate model**
-	```bash
-	python kitti_evaluate.py
-	```
-	This will output the mean-squared error for predictions as well as make plots comparing predictions to ground-truth.
-
-### Feature Extraction
-Extracting the intermediate features for a given layer in the PredNet can be done using the appropriate ```output_mode``` argument. For example, to extract the hidden state of the LSTM (the "Representation" units) in the lowest layer, use ```output_mode = 'R0'```. More details can be found in the PredNet docstring.
-
-### Multi-Step Prediction
-The PredNet argument ```extrap_start_time``` can be used to force multi-step prediction. Starting at this time step, the prediction from the previous time step will be treated as the actual input. For example, if the model is run on a sequence of 15 timesteps with ```extrap_start_time = 10```, the last output will correspond to a t+5 prediction. In the paper, we train in this setting starting from the original t+1 trained weights (see `kitti_extrap_finetune.py`), and the resulting fine-tuned weights are included in `download_models.sh`. Note that when training with extrapolation, the "errors" are no longer tied to ground truth, so the loss should be calculated on the pixel predictions themselves. This can be done by using ```output_mode = 'prediction'```, as illustrated in `kitti_extrap_finetune.py`.
+	TODO:
 
 ### Additional Notes
 When training on a new dataset, the image size has to be divisible by 2^(nb of layers - 1) because of the cyclical 2x2 max-pooling and upsampling operations.
+
+### Test Results
+<img src="./result_images/campus.png" width="900"/>
+[campus dataset]
+```bash
+Model MSE: 21.510345
+Previous Frame MSE: 41.555820
+
+Model SSIM: 0.847482
+Previous Frame SSIM: 0.783482
+	```
+<img src="./road/city.png" width="900"/>
+[road dataset]
+```bash
+Model MSE: 10.711375
+Previous Frame MSE: 20.286551
+
+Model SSIM: 0.826418
+Previous Frame SSIM: 0.811863
+	```
+<img src="./result_images/city.png" width="900"/>
+[city dataset]
+```bash
+Model MSE: 23.651453
+Previous Frame MSE: 42.781769
+
+Model SSIM: 0.514228
+Previous Frame SSIM: 0.484143
+	```
+<img src="./result_images/residential.png" width="900"/>
+[residential dataset]
+```bash
+Model MSE: 8.754193
+Previous Frame MSE: 12.637510
+
+Model SSIM: 0.817005
+Previous Frame SSIM: 0.809253
+
+	```
+
 
 <br>
 

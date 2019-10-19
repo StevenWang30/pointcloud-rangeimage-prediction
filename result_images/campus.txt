@@ -1,0 +1,6 @@
+Model MSE: 21.510345
+Previous Frame MSE: 41.555820
+
+
+Model SSIM: 0.847482
+Previous Frame SSIM: 0.783482

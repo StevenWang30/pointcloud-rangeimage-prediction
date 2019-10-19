@@ -40,8 +40,8 @@ import IPython
 def main(args):
     compare_with_copy = True
     save_model = True  # if weights will be saved
-    weights_file = os.path.join(args.weight_dir, 'prednet_kitti_weights.hdf5')  # where weights will be saved
-    json_file = os.path.join(args.weight_dir, 'prednet_kitti_model.json')
+    weights_file = os.path.join(args.model_dir, 'prednet_kitti_weights.hdf5')  # where weights will be saved
+    json_file = os.path.join(args.model_dir, 'prednet_kitti_model.json')
     #
     # # Data files
     # train_file = os.path.join(args.data_dir, 'X_train.hkl')
@@ -103,14 +103,13 @@ def main(args):
 
     # IF LOAD CKPT fILE
     # load old checkpoint weight
-    old_checkpoint_path = args.ckpt
     # old_checkpoint_path = '/code/rangeImage_prediction/good_results/model_data_keras2/good_frame5.ckpt'
-    old_checkpoint_path = '/code/rangeImage_prediction/good_results/cp_nt10.ckpt'
-    model.load_weights(old_checkpoint_path)
+    # old_checkpoint_path = '/code/rangeImage_prediction/good_results/cp_nt10.ckpt'
+    model.load_weights(args.weight_path)
 
     # train_generator = SequenceGenerator(train_file, train_sources, nt, batch_size=args.batch_size, shuffle=True)
     # val_generator = SequenceGenerator(val_file, val_sources, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
-    # train_generator = SequenceGenerator_data(args, args.training_data, nt, batch_size=args.batch_size, shuffle=True)
+    train_generator = SequenceGenerator_data(args, args.training_data, nt, batch_size=args.batch_size, shuffle=True)
     val_generator = SequenceGenerator_data(args, args.validation_data, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
     # a = val_generator.create_all()[0][0]
     # a=val_data[0]
@@ -126,7 +125,7 @@ def main(args):
     lr_schedule = lambda epoch: 0.001 if epoch < 20 else 0.0001    # start with lr of 0.001 and then drop to 0.0001 after 75 epochs
     callbacks = [LearningRateScheduler(lr_schedule)]
     if save_model:
-        if not os.path.exists(args.weight_dir): os.mkdir(args.weight_dir)
+        if not os.path.exists(args.model_dir): os.mkdir(args.model_dir)
         callbacks.append(ModelCheckpoint(filepath=weights_file, monitor='val_loss', save_best_only=True))
 
     callbacks.append(TensorBoard(log_dir=args.log_dir))
@@ -134,11 +133,11 @@ def main(args):
     callbacks.append(my_callback_object)
 
     # save model every 1 epoch
-    checkpoint_path = args.ckpt
+    checkpoint_path = args.ckpt_save_dir
     cp_callback = ModelCheckpoint(checkpoint_path, save_weights_only=True, verbose=1)
     callbacks.append(cp_callback)
 
-    history = model.fit_generator(val_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch, args=args,
+    history = model.fit_generator(train_generator, args.samples_per_epoch / args.batch_size, args.nb_epoch, args=args,
               callbacks = callbacks, validation_data=val_generator, validation_steps=args.N_seq_val / args.batch_size)
 
     # if compare_with_copy:
@@ -161,8 +160,8 @@ if __name__ == '__main__':
     # Path related arguments
     parser.add_argument('--data_dir',
                         default='/data/KITTI_rangeimage_predict')
-    # parser.add_argument('--training_data',
-    #                     default='/data/KITTI_rangeimage_predict/training_data.npy')
+    parser.add_argument('--training_data',
+                        default='/data/KITTI_rangeimage_predict/training_data.npy')
     # parser.add_argument('--validation_data',
     #                     default='/data/KITTI_rangeimage_predict/validation_data.npy')
     # parser.add_argument('--result_dir',
@@ -178,8 +177,8 @@ if __name__ == '__main__':
     parser.add_argument('--result_dir',
                         default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus')
 
-    parser.add_argument('--weight_dir',
-                        default='./model_data_keras2/')
+    parser.add_argument('--model_dir', default='./model_data_keras2/')
+    parser.add_argument('--weight_path', default='/code/rangeImage_prediction/good_results/cp_nt10.ckpt')
 
 
     # Model related arguments
@@ -195,8 +194,7 @@ if __name__ == '__main__':
                         help='number of timesteps used for sequences in training')
     parser.add_argument('--norm_value', default=80, type=float,
                         help='value for normalizing the input data into 0-1')
-    parser.add_argument('--log_dir', default='./log/train',
-                        help='log file for tensorboard')
+    parser.add_argument('--log_dir', default='./log/train', help='log file for tensorboard')
 
     # Data related arguments
     # origin myself dataset arguments
@@ -204,21 +202,25 @@ if __name__ == '__main__':
                         help='nb_epoch')
     parser.add_argument('--channel', default=1,
                         help='img channel')
-    parser.add_argument('--width', default=2000,
-                        help='img width')
-    parser.add_argument('--height', default=64,
-                        help='img height')
+    # parser.add_argument('--width', default=2000,
+    #                     help='img width')
+    # parser.add_argument('--height', default=64,
+    #                     help='img height')
 
     # Misc arguments
     parser.add_argument('--seed', default=123, type=int,
                         help='manual seed')
-    parser.add_argument('--ckpt', default="ckpt/cp.ckpt",
+    parser.add_argument('--ckpt_save_dir', default="ckpt/cp.ckpt",
                         help='folder to output checkpoints')
     # parser.add_argument('--disp_iter', type=int, default=20,
     #                     help='frequency to display')
 
 
     args = parser.parse_args()
+
+    args.width = args.rangeimage_size[2]
+    args.height = args.rangeimage_size[1]
+
     print("Input arguments:")
     for key, val in vars(args).items():
         print("{:16} {}".format(key, val))

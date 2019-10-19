@@ -25,7 +25,7 @@ class My_Callback(keras.callbacks.Callback):
 
         # train_model = self.model
         train_model = self.callbacks[5].model
-        checkpoint_path = args.ckpt
+        checkpoint_path = args.ckpt_save_dir
         # checkpoint_path = "ckpt/cp_back.ckpt"
 
         train_model.load_weights(checkpoint_path)
