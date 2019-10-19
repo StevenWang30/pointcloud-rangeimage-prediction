@@ -35,7 +35,7 @@ You need to change the directory in the code to fit your own dataset.
 	Use --training_data --validation_data to load data, and use --result_dir to specify the validation visualization result directory path.
 	--nt changes the time stamps in a prediction iteration. It means use nt - 1 images to predict the nt image. --rangeimage_size sets the range image size, which set default 64, 2000, 1 here.
 	See [Keras FAQ](http://keras.io/getting-started/faq/#how-can-i-run-keras-on-gpu) on how to run using a GPU.
-	**To download pre-trained weights**, run `download_models.sh`
+	
 	<br>
 	<br>
 
@@ -46,8 +46,10 @@ You need to change the directory in the code to fit your own dataset.
 When training on a new dataset, the image size has to be divisible by 2^(nb of layers - 1) because of the cyclical 2x2 max-pooling and upsampling operations.
 
 ### Test Results
-<img src="./result_images/campus.png" width="900"/>
+
 [campus dataset]
+<img src="./result_images/campus.png" width="900"/>
+
 ```bash
 Model MSE: 21.510345
 Previous Frame MSE: 41.555820
@@ -55,8 +57,10 @@ Previous Frame MSE: 41.555820
 Model SSIM: 0.847482
 Previous Frame SSIM: 0.783482
 	```
-<img src="./road/city.png" width="900"/>
+
 [road dataset]
+<img src="./road/city.png" width="900"/>
+
 ```bash
 Model MSE: 10.711375
 Previous Frame MSE: 20.286551
@@ -64,8 +68,11 @@ Previous Frame MSE: 20.286551
 Model SSIM: 0.826418
 Previous Frame SSIM: 0.811863
 	```
-<img src="./result_images/city.png" width="900"/>
+
+
 [city dataset]
+<img src="./result_images/city.png" width="900"/>
+
 ```bash
 Model MSE: 23.651453
 Previous Frame MSE: 42.781769
@@ -73,8 +80,11 @@ Previous Frame MSE: 42.781769
 Model SSIM: 0.514228
 Previous Frame SSIM: 0.484143
 	```
-<img src="./result_images/residential.png" width="900"/>
+
+
 [residential dataset]
+<img src="./result_images/residential.png" width="900"/>
+
 ```bash
 Model MSE: 8.754193
 Previous Frame MSE: 12.637510
