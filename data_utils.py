@@ -66,14 +66,15 @@ class SequenceGenerator(Iterator):
             index_array, current_batch_size = next(self.index_generator), self.batch_size
         batch_x = np.zeros((current_batch_size, self.nt) + self.im_shape, np.float32)
         # IPython.embed()
+        print("index_array:", index_array)
         print(index_array[0])
         # for i in range(index_array[0].shape[0]):
         #     for j in range(self.nt):
         #         print(self.sources[index_array[0][i]+j])
         for i, l in enumerate(index_array[0]):
-            # print(i)
+            #print(i)
 
-            # print(idx+self.nt)
+            #print(idx+self.nt)
             # print(self.data.shape)
             # IPython.embed()
             idx = self.possible_starts[l]

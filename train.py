@@ -111,6 +111,7 @@ def main(args):
     # val_generator = SequenceGenerator(val_file, val_sources, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
     train_generator = SequenceGenerator_data(args, args.training_data, nt, batch_size=args.batch_size, shuffle=True)
     val_generator = SequenceGenerator_data(args, args.validation_data, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
+    # IPython.embed()
     # a = val_generator.create_all()[0][0]
     # a=val_data[0]
     # a[0][0]
@@ -160,8 +161,8 @@ if __name__ == '__main__':
     # Path related arguments
     parser.add_argument('--data_dir',
                         default='/data/KITTI_rangeimage_predict')
-    parser.add_argument('--training_data',
-                        default='/data/KITTI_rangeimage_predict/training_data.npy')
+    # parser.add_argument('--training_data',
+    #                     default='/data/KITTI_rangeimage_predict/training_data.npy')
     # parser.add_argument('--validation_data',
     #                     default='/data/KITTI_rangeimage_predict/validation_data.npy')
     # parser.add_argument('--result_dir',
@@ -172,21 +173,32 @@ if __name__ == '__main__':
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/results')
 
+    # draw picture sxb data!!!!!!!!!!!
+    # parser.add_argument('--training_data',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus')
+
+    # video wsk data!!!!
+    parser.add_argument('--training_data',
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
     parser.add_argument('--validation_data',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus.npy')
+                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
     parser.add_argument('--result_dir',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus')
+                        default='/data/KITTI_rangeimage_predict/video_data/road')
 
     parser.add_argument('--model_dir', default='./model_data_keras2/')
     parser.add_argument('--weight_path', default='/code/rangeImage_prediction/good_results/cp_nt10.ckpt')
 
 
     # Model related arguments
-    parser.add_argument('--nb_epoch', default=20,
+    parser.add_argument('--nb_epoch', default=80,
                         help='nb_epoch') # default 150
     parser.add_argument('--batch_size', default=3, type=int,
                         help='input batch size')
-    parser.add_argument('--samples_per_epoch', default=10, type=int,
+    parser.add_argument('--samples_per_epoch', default=200, type=int,
                         help='samples_per_epoch') # default 500
     parser.add_argument('--N_seq_val', default=20, type=int,
                         help='number of sequences to use for validation')

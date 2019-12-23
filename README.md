@@ -5,10 +5,8 @@ We project the 3D point cloud into range image in shape 64 x 2000, and use 2D co
 Code and models are changed from Prednet by Bill etc.
 
 The architecture is implemented as a custom layer<sup>1</sup> in [Keras](http://keras.io/).
-Code and model data is compatible with Keras 2.0 and Python 2.7 and 3.6.
-The latest version has been tested on Keras 2.2.4 with Tensorflow 1.6.
-For previous versions of the code compatible with Keras 1.2.1, use fbcdc18.
-To convert old PredNet model files and weights for Keras 2.0 compatibility, see ```convert_model_to_keras2``` in `keras_utils.py`.
+Code and model data is compatible with Keras 2.0, Python 3.6, Tensorflow 1.6, cudnn 7.0, Cuda 9.0.
+
 <br>
 
 ## KITTI Demo
