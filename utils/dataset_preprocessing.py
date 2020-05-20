@@ -8,7 +8,7 @@ from pointcloud_to_rangeimage import *
 lidar_angular_xy_range_ = 360
 max_lidar_angular_z_ = 2
 min_lidar_angular_z_ = -24.5
-range_x_ = 64
+range_x_ = 16
 range_y_ = 2000
 nearest_bound_ = 0.5
 furthest_bound_ = 120
@@ -150,10 +150,16 @@ if __name__ == '__main__':
     #             '/data/rangeimage_prediction/rangeimage_txt_file/Urban_30']
 
     # autoware 32E data
-    seq_name = ['/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e']
+    # seq_name = ['/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e']
+
+    # kaist VLP-16 data
+    seq_name = ['/data/rangeimage_prediction_VLP16/rangeimage_txt_file/Urban11']
+
     for i in range(len(seq_name)):
-        save_path = seq_name[i] +'.npy'
+        save_path = seq_name[i] + '.npy'
         save_range_image_txt_and_source_to_npy([seq_name[i]], save_path)
+
+
 
 
 

@@ -105,7 +105,8 @@ def main(args):
     # load old checkpoint weight
     # old_checkpoint_path = '/code/rangeImage_prediction/good_results/model_data_keras2/good_frame5.ckpt'
     # old_checkpoint_path = '/code/rangeImage_prediction/good_results/cp_nt10.ckpt'
-    model.load_weights(args.weight_path)
+    if args.use_weight:
+        model.load_weights(args.weight_path)
 
     # train_generator = SequenceGenerator(train_file, train_sources, nt, batch_size=args.batch_size, shuffle=True)
     # val_generator = SequenceGenerator(val_file, val_sources, nt, batch_size=args.batch_size, N_seq=args.N_seq_val)
@@ -197,22 +198,32 @@ if __name__ == '__main__':
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/ACMMM_data/results/campus')
 
-    # TU_velodyne data
+    # # TU_velodyne data
+    # parser.add_argument('--training_data',
+    #                     default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/rangeimage_prediction/results/Urban_30')
+
+    # 32E data
     parser.add_argument('--training_data',
-                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
+                        default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
     parser.add_argument('--validation_data',
-                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
+                        default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
     parser.add_argument('--result_dir',
-                        default='/data/rangeimage_prediction/results/Urban_30')
+                        default='/data/rangeimage_prediction_32E/results/autoware_32e')
 
     parser.add_argument('--model_dir', default='./model_data_keras2/')
+
+    parser.add_argument('--use_weight', default=False)
     parser.add_argument('--weight_path', default='/code/rangeImage_prediction/good_results/cp_nt10.ckpt')
 
 
     # Model related arguments
     parser.add_argument('--nb_epoch', default=80,
                         help='nb_epoch') # default 150
-    parser.add_argument('--batch_size', default=3, type=int,
+    parser.add_argument('--batch_size', default=4, type=int,
                         help='input batch size')
     parser.add_argument('--samples_per_epoch', default=200, type=int,
                         help='samples_per_epoch') # default 500
@@ -226,7 +237,7 @@ if __name__ == '__main__':
 
     # Data related arguments
     # origin myself dataset arguments
-    parser.add_argument('--rangeimage_size', default=[0, 64, 2000, 1],
+    parser.add_argument('--rangeimage_size', default=[0, 32, 2000, 1],
                         help='nb_epoch')
     parser.add_argument('--channel', default=1,
                         help='img channel')
