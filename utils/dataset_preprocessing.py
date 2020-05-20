@@ -132,10 +132,28 @@ if __name__ == '__main__':
     # save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/road_draw.npy'
     # save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
 
-    training_seq_names = ['/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road']
-    save_folder = 'range_image_data'
-    # transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
-    save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road.npy'
-    save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
+    # training_seq_names = ['/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road']
+    # save_folder = 'range_image_data'
+    # # transform_point_cloud_txt_file_to_range_image_txt_file(training_seq_names[0], save_folder)
+    # save_path = '/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/road.npy'
+    # save_range_image_txt_and_source_to_npy(training_seq_names, save_path)
+
+    # # ACMMM data
+    # seq_name = ['/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/campus',
+    #             '/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/ciy',
+    #             '/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/person',
+    #             '/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/residential']
+
+    # # TU velodyne data
+    # seq_name = ['/data/rangeimage_prediction/rangeimage_txt_file/Parking_lot_30',
+    #             '/data/rangeimage_prediction/rangeimage_txt_file/Residential_area_30',
+    #             '/data/rangeimage_prediction/rangeimage_txt_file/Urban_30']
+
+    # autoware 32E data
+    seq_name = ['/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e']
+    for i in range(len(seq_name)):
+        save_path = seq_name[i] +'.npy'
+        save_range_image_txt_and_source_to_npy([seq_name[i]], save_path)
+
 
 

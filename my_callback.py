@@ -46,7 +46,6 @@ class My_Callback(keras.callbacks.Callback):
         X_test_origin = validation_data.create_all_origin()
         # X_test = X_test[0:10]
         # X_test = X_test / args.norm_value
-        # IPython.embed()
 
         # im = X_test[0][0] * args.norm_value
         # RESULTS_SAVE_DIR = "../mid_result_vis/epoch" + str(epoch)
@@ -81,6 +80,9 @@ class My_Callback(keras.callbacks.Callback):
         ssim_prev = np.mean(ssim_prev_a)
 
         result_save_path = args.mse_result_path
+        print('result_save_path: ', result_save_path)
+        print('mse_model: ', mse_model)
+        print('mse_prev: ', mse_prev)
 
         f = open(result_save_path, 'a+')
         f.write("epoch %d\n" % epoch)
@@ -101,6 +103,15 @@ class My_Callback(keras.callbacks.Callback):
         X_not_scaled = X_not_scaled[:, :, :, :, 0]
         X_hat_not_scaled = X_hat_not_scaled[:, :, :, :, 0]
         X_test_origin = X_test_origin[:, :, :, :, 0]
+
+        # save 3 results (less than 20)
+        for r_i in range(3):
+            save_dir = os.path.join(args.fig_result_dir, '3_results')
+            if not os.path.exists(save_dir): os.mkdir(save_dir)
+            save_path = os.path.join(save_dir, "X_hat_" + str(r_i) + ".txt")
+            np.savetxt(save_path, X_hat_not_scaled[r_i, -1], fmt='%f')
+            save_path = os.path.join(save_dir, "X_gt_" + str(r_i) + ".txt")
+            np.savetxt(save_path, X_not_scaled[r_i, -1], fmt='%f')
 
         misc_value = np.max(X_not_scaled) / 255
         im_X = (X_not_scaled[rand_num, -1] / misc_value).astype(np.uint8)
@@ -270,7 +281,7 @@ class My_Callback(keras.callbacks.Callback):
     def my_on_epoch_end(self, epoch, validation_data, args):
         print("on epoch end: process val data and save: ...")
         # IPython.embed()
-        # if(epoch % 10 == 0):
-        # My_Callback.test_image(self, epoch, validation_data, args)
-        My_Callback.save_video_result(self, epoch, validation_data, args)
+        if(epoch % 2 == 0):
+            My_Callback.test_image(self, epoch, validation_data, args)
+        # My_Callback.save_video_result(self, epoch, validation_data, args)
         # self.validation_data.shape

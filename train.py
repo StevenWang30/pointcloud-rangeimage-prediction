@@ -181,13 +181,29 @@ if __name__ == '__main__':
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus')
 
-    # video wsk data!!!!
+    # # video wsk data!!!!
+    # parser.add_argument('--training_data',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/KITTI_rangeimage_predict/video_data/road')
+
+    # # ACMMM_data
+    # parser.add_argument('--training_data',
+    #                     default='/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/campus.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/KITTI_rangeimage_predict/ACMMM_data/txt_data/campus.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/KITTI_rangeimage_predict/ACMMM_data/results/campus')
+
+    # TU_velodyne data
     parser.add_argument('--training_data',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
+                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
     parser.add_argument('--validation_data',
-                        default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/Road.npy')
+                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
     parser.add_argument('--result_dir',
-                        default='/data/KITTI_rangeimage_predict/video_data/road')
+                        default='/data/rangeimage_prediction/results/Urban_30')
 
     parser.add_argument('--model_dir', default='./model_data_keras2/')
     parser.add_argument('--weight_path', default='/code/rangeImage_prediction/good_results/cp_nt10.ckpt')
@@ -259,6 +275,11 @@ if __name__ == '__main__':
     args.mse_result_path = os.path.join(mse_result_dir,
                                         'mse_result-' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).replace(
                                             ' ', '-') + '.txt')
+    result_save_path = args.mse_result_path
+
+    f = open(result_save_path, 'a+')
+    f.write("start\n")
+    f.close()
     fig_result_dir = os.path.join(args.result_dir, 'fig_result')
     if not os.path.exists(fig_result_dir): os.mkdir(fig_result_dir)
     args.fig_result_dir = fig_result_dir

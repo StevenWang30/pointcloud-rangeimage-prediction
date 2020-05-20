@@ -7,6 +7,19 @@ from keras.utils import OrderedEnqueuer
 from my_callback import My_Callback
 
 class My_Model(Model):
+    def _get_deduped_metrics_names(self):
+        out_labels = self.metrics_names
+        # Rename duplicated metrics name
+        # (can happen with an output layer shared among multiple dataflows).
+        deduped_out_labels = []
+        for i, label in enumerate(out_labels):
+            new_label = label
+            if out_labels.count(label) > 1:
+                dup_idx = out_labels[:i].count(label)
+                new_label += '_' + str(dup_idx + 1)
+            deduped_out_labels.append(new_label)
+        return deduped_out_labels
+
     def fit_generator(self, generator,
                       steps_per_epoch,
                       epochs=1,
