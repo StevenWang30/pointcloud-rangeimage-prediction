@@ -174,7 +174,7 @@ if __name__ == '__main__':
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/raw_data_train/Road/results')
 
-    # draw picture sxb data!!!!!!!!!!!
+    # # draw picture sxb data!!!!!!!!!!!
     # parser.add_argument('--training_data',
     #                     default='/data/KITTI_rangeimage_predict/draw_pic_data/draw_pic/data_new/campus.npy')
     # parser.add_argument('--validation_data',
@@ -198,21 +198,29 @@ if __name__ == '__main__':
     # parser.add_argument('--result_dir',
     #                     default='/data/KITTI_rangeimage_predict/ACMMM_data/results/campus')
 
-    # # TU_velodyne data
-    # parser.add_argument('--training_data',
-    #                     default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
-    # parser.add_argument('--validation_data',
-    #                     default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
-    # parser.add_argument('--result_dir',
-    #                     default='/data/rangeimage_prediction/results/Urban_30')
-
-    # 32E data
+    # TU_velodyne data
     parser.add_argument('--training_data',
-                        default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
+                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
     parser.add_argument('--validation_data',
-                        default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
+                        default='/data/rangeimage_prediction/rangeimage_txt_file/Urban_30.npy')
     parser.add_argument('--result_dir',
-                        default='/data/rangeimage_prediction_32E/results/autoware_32e')
+                        default='/data/rangeimage_prediction/results/Urban_30')
+
+    # # 32E data
+    # parser.add_argument('--training_data',
+    #                     default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/rangeimage_prediction_32E/results/autoware_32e')
+
+    # # VLP-16 data
+    # parser.add_argument('--training_data',
+    #                     default='/data/rangeimage_prediction_VLP16/rangeimage_txt_file/outdoor.npy')
+    # parser.add_argument('--validation_data',
+    #                     default='/data/rangeimage_prediction_VLP16/rangeimage_txt_file/outdoor.npy')
+    # parser.add_argument('--result_dir',
+    #                     default='/data/rangeimage_prediction_VLP16/results/outdoor')
 
     parser.add_argument('--model_dir', default='./model_data_keras2/')
 
@@ -223,7 +231,7 @@ if __name__ == '__main__':
     # Model related arguments
     parser.add_argument('--nb_epoch', default=80,
                         help='nb_epoch') # default 150
-    parser.add_argument('--batch_size', default=4, type=int,
+    parser.add_argument('--batch_size', default=3, type=int,
                         help='input batch size')
     parser.add_argument('--samples_per_epoch', default=200, type=int,
                         help='samples_per_epoch') # default 500
@@ -237,7 +245,7 @@ if __name__ == '__main__':
 
     # Data related arguments
     # origin myself dataset arguments
-    parser.add_argument('--rangeimage_size', default=[0, 32, 2000, 1],
+    parser.add_argument('--rangeimage_size', default=[0, 64, 2000, 1],
                         help='nb_epoch')
     parser.add_argument('--channel', default=1,
                         help='img channel')
@@ -288,9 +296,9 @@ if __name__ == '__main__':
                                             ' ', '-') + '.txt')
     result_save_path = args.mse_result_path
 
-    f = open(result_save_path, 'a+')
-    f.write("start\n")
-    f.close()
+    # f = open(result_save_path, 'a+')
+    # f.write("start\n")
+    # f.close()
     fig_result_dir = os.path.join(args.result_dir, 'fig_result')
     if not os.path.exists(fig_result_dir): os.mkdir(fig_result_dir)
     args.fig_result_dir = fig_result_dir

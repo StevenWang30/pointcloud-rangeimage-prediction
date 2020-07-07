@@ -9,7 +9,7 @@ lidar_angular_xy_range_ = 360
 max_lidar_angular_z_ = 2
 min_lidar_angular_z_ = -24.5
 range_x_ = 16
-range_y_ = 2000
+range_y_ = 1000
 nearest_bound_ = 0.5
 furthest_bound_ = 120
 if_show_ground_ = True
@@ -82,7 +82,6 @@ def save_range_image_txt_and_source_to_npy(seq_names, save_path):
             if f.split('.')[-1] != 'txt':
                 continue
             print('compose file:', os.path.join(root, f))
-            # IPython.embed()
             range_image_data = np.loadtxt(os.path.join(root, f))
             range_image_data = np.expand_dims(range_image_data, -1)
             data = np.append(data, [range_image_data], axis=0)
@@ -153,7 +152,7 @@ if __name__ == '__main__':
     # seq_name = ['/data/rangeimage_prediction_32E/rangeimage_txt_file/autoware_32e']
 
     # kaist VLP-16 data
-    seq_name = ['/data/rangeimage_prediction_VLP16/rangeimage_txt_file/Urban11']
+    seq_name = ['/data/rangeimage_prediction_VLP16/rangeimage_txt_file/outdoor']
 
     for i in range(len(seq_name)):
         save_path = seq_name[i] + '.npy'

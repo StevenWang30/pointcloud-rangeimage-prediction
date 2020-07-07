@@ -10,7 +10,7 @@ from keras.models import Model
 import numpy as np
 import os
 import cv2
-# import time
+import time
 # from tifffile import imsave
 #
 # import scipy.misc
@@ -19,7 +19,7 @@ from skimage.measure import compare_ssim
 
 class My_Callback(keras.callbacks.Callback):
     def test_image(self, epoch, validation_data, args):
-
+        start_time = time.time()
         nt = args.nt
         batch_size = 1
 
@@ -58,6 +58,19 @@ class My_Callback(keras.callbacks.Callback):
 
         X_not_scaled = X_test * args.norm_value
         X_hat_not_scaled = X_hat * args.norm_value
+
+
+        time_cost = (time.time() - start_time)
+        print("--- epoch %d, time cost %.4f seconds ---" % (epoch, time_cost))
+        time_cost_file_path = '/data/KITTI_rangeimage_predict/time_cost.txt'
+        f = open(time_cost_file_path, 'a+')
+        f.write("\n\n\nepoch: %d\n" % epoch)
+        f.write("args.rangeimage_size: [%d, %d, %d, %d] \n" %(args.rangeimage_size[0], args.rangeimage_size[1], args.rangeimage_size[2], args.rangeimage_size[3]))
+        f.write("network length: %d\n" % args.nt)
+        f.write("time_cost each frame: %.4f" % (time_cost / X_hat.shape[0]))
+        f.close()
+        IPython.embed()
+        a=b
 
         # Compare MSE of PredNet predictions vs. using last frame.  Write results to prediction_scores.txt
         mse_model = np.mean(
